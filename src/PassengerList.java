@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 public class PassengerList   {
-    private ArrayList<Passengers> passengers;
+    protected ArrayList<Passengers> passengers;
     public PassengerList(){
         passengers=new ArrayList<>();
     }
@@ -14,10 +14,11 @@ public class PassengerList   {
        System.out.println("------------");
         System.out.println("* " + customer.name + " "+ customer.surname);
     }
-    public void displayAllPassenger(){
+    public Customer displayAllPassenger(){
         for (Passengers passenger: passengers) {
             passenger.displayInfo();
         }
+        return null;
     }
 
 }
