@@ -2,19 +2,12 @@ import java.util.ArrayList;
 
 public class TicketList implements Information {
     private ArrayList<Ticket> tickets;
-
-
-
     public TicketList() {
         tickets = new ArrayList<>();
     }
-
-
     public void addTicket(Ticket ticket) {
         tickets.add(ticket);
-
     }
-
     public void removeTicket(Ticket ticket){
        tickets.remove(ticket);
         System.out.println("Квиток наразі недоступний");

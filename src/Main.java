@@ -3,12 +3,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Transport car = new Car("Opel", 2);
-        Transport bus = new Bus("Mersedes", 55);
+        Transport bus = new Bus("Mersedes", 0);
         Customer carCustomer = new Customer("Ivanyshyn", "Andriy", "0976542770", 3);
         Customer busCustomer = new Customer("Lidak", "Anna", "096578930", 5);
         Passengers carPassengers = new Passengers("Iryna", "Ivanyshyn");
         Passengers carPassengers1 = new Passengers("Viktoria", "Ivanyshyn");
-        Passengers busPassenger = new Passengers("Lida", "Lidak");
+        Passengers busPassenger = new Passengers("Andriana", "Lidak");
         Passengers busPassenger1 = new Passengers("Ivan", "Vorobiy");
         Passengers busPassenger2 = new Passengers("Veronika", "Vorobiy");
         Passengers busPassenger3 = new Passengers("Artur", "Suhoruk");
@@ -18,7 +18,7 @@ public class Main {
         Ticket busTicket = new Ticket(1500, "Kyiv", "Odesa", 450,
                 "Premium", "9.00", "16.00");
         Ticket carTicket1 = new Ticket(500, "Odesa", "Harkiv", 600, "Econom", "14.00", "23.00");
-
+        bus.displayInfo();
         TicketList ticketList = new TicketList();
         PassengerList passengerList = new PassengerList();
         ticketList.displayInfo();
@@ -49,7 +49,7 @@ public class Main {
                     break;
                 default:
                     System.out.println("Неправильний вибір. Спробуйте ще раз.");
-                    continue;
+                    break;
             }
             if (selectedTicket != null) {
                 System.out.println("Ви вибрали квиток:");
