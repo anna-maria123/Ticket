@@ -4,7 +4,7 @@ abstract class Transport implements Information {
     public Transport(String name,  int placeOrder) {
         try{
             if(placeOrder<=0){
-                throw new IllegalArgumentException("Початкова кількість місць у автобусі має бути більшп за 0");
+                throw new IllegalArgumentException("Початкова кількість місць у автобусі має бути більша за 0");
             }
             this.name = name;
             this.placeOrder = placeOrder;
