@@ -25,20 +25,21 @@ public class Ticket implements Information {
         }
     }
 
-    public void bookSeatInfo(Customer customer,Transport transport) {
-        if ( transport.placeOrder  > customer.numberOfSeats) {
-            System.out.println("КВИТКИ ЗАБРОНЬОВАНО");
+    public synchronized void seat(Customer customer,Transport transport) {
+        System.out.println("Покупець " + customer.name + " хоче замовити " + customer.numberOfSeats + " місць");
+        if (customer.numberOfSeats <= transport.placeOrder) {
+            transport.placeOrder -= customer.numberOfSeats;
+            System.out.println("Покупець " + customer.name + " успішно замовив " + customer.numberOfSeats + " кількість місць. Залишилося місць " + transport.placeOrder);
         } else {
-            System.out.println("НЕМАЄ ВІЛЬНИХ МІСЦЬ");
+            System.out.println("Покупцю " + customer.name + " не вдалося замовити квитки,тому що не має вільних місць. Виберіть інший квиток ");
         }
     }
-    @Override
-    public void displayInfo(){
-        System.out.println("Квиток від міста " + start + " до міста " + finish);
-        System.out.println("Відправляється: " + startTime );
-        System.out.println("Прибуває: " + finishTime);
-        System.out.println( "Дистанція: " + distance + " км");
-    }
-
+        @Override
+        public void displayInfo () {
+            System.out.println("Квиток від міста " + start + " до міста " + finish);
+            System.out.println("Відправляється: " + startTime);
+            System.out.println("Прибуває: " + finishTime);
+            System.out.println("Дистанція: " + distance + " км");
+        }
 
 }

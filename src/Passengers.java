@@ -3,7 +3,7 @@ public class Passengers implements Information{
     public String name;
     public Passengers(String name, String surname) throws PassangerException{
         if (name == null || surname == null || name.isEmpty() || surname.isEmpty()) {
-        throw new IllegalArgumentException("ім'я і прізвище користувача не можуть бути порожніми.");
+        throw new IllegalArgumentException("Ім'я і прізвище користувача не можуть бути порожніми.");
     }
         this.surname = surname;
         this.name = name;

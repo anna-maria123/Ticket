@@ -1,4 +1,4 @@
-public  class Customer implements Information {
+public  class Customer implements Information,Runnable{
     public String surname;
     public String name;
     public String contacts;
@@ -17,4 +17,8 @@ public  class Customer implements Information {
         System.out.println("-Кількість замовлених місць:  " + numberOfSeats);
     }
 
+    @Override
+    public void run() {
+        System.out.println("Клієнт "+ name +" обробляється");
+    }
 }
